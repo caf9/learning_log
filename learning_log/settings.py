@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xjrikt_x+2db8j53m4ikxun@&gi*%s12h8bx8iy&97zrltmvk=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1', '<app-created-name>.on.dockerize.io']
 
 
 # Application definition
