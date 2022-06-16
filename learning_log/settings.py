@@ -11,21 +11,33 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+#import dotenv
+#from dotenv import load_dotenv, find_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
+# Add .env variables
+#dotenv_file = "/Learning Log/secrets.env"
+#if os.path.isfile(dotenv_file):
+#dotenv.load_dotenv(dotenv_file)
+#load_dotenv(find_dotenv(BASE_DIR))
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-xjrikt_x+2db8j53m4ikxun@&gi*%s12h8bx8iy&97zrltmvk='
+#os.environ['SECRET_KEY']
+#'django-insecure-xjrikt_x+2db8j53m4ikxun@&gi*%s12h8bx8iy&97zrltmvk='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1', '<app-created-name>.on.dockerize.io']
+
+ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1', 'learning_log.on.dockerize.io']
 
 
 # Application definition
@@ -36,6 +48,7 @@ INSTALLED_APPS = [
     'users',
     # Third party apps.
     'bootstrap4',
+    'dotenv',
     # Default django apps
     'django.contrib.admin',
     'django.contrib.auth',
