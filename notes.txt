@@ -1,0 +1,27 @@
+http://127.0.0.1:8000
+https://docs.djangoproject.com/en/4.0/ref/models/fields/
+
+TO START THE WEB SERVER
+    # Activate virtual environment
+    ll_env/scripts/activate
+
+    # Run the server
+    python manage.py runserver
+
+TO STOP THE WEB SERVER
+    # Stop the server
+    ctrl+c
+
+    # Deactivate the virtual environment
+    deactivate
+
+YOU NEED TO MIGRATE DB WHEN CHANGES HAS BEEN MADE TO models.py TO KEEP EXISTING DATA
+    # Update models.py
+    python manage.py makemigrations learning_logs
+    python manage.py migrate
+
+YOU CAN ALSO FLUSH THE DB AND CREATE A NEW ONE
+    warning, everything will be gone, even superuser
+    python manage.py flush
+
+ll_admin
