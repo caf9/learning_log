@@ -1,0 +1,12 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block page_header %}
+    <h3>Delete Entry</h3>
+{% endblock page_header %}
+
+{% block content %}
+    <p>
+        <p>Entry deleted.</p> - 
+        <a href="{% url 'learning_logs:topic' topic.id %}">Return to topic</a>
+    </p>
+{% endblock content %}

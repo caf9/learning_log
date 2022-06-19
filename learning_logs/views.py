@@ -65,7 +65,7 @@ def new_entry(request, topic_id):
         new_entry = form.save(commit=False)
         new_entry.topic = topic
         new_entry.save()
-        return redirect('learning_logs:topic', topic_id=topic_id)
+        return redirect('learning_logs:topic', topic_id=topic.id)
 
     # Display a blank or invalid form.
     context = {'topic': topic, 'form': form}
@@ -92,6 +92,18 @@ def edit_entry(request, entry_id):
 
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'learning_logs/edit_entry.html', context)
+
+def delete_entry(request, entry_id, topic_id):
+    """Delete an entry"""
+    topic = Topic.objects.get(id=topic_id)
+    Entry.objects.get(id=entry_id).delete()
+    return redirect('learning_logs:topic', topic_id=topic.id)
+
+def delete_topic(request, topic_id):
+    """Delete an entry"""
+    Topic.objects.get(id=topic_id).delete()
+    #Entry.objects.get(id=entry_id).delete()
+    return redirect('learning_logs:topics')
 
 def check_topic_owner(topic_owner, request_user):
     if topic_owner != request_user:
