@@ -2,7 +2,7 @@
 
 20-06-2022
 * Added support for environment variables.
-* Put secrets into environment variables.
+* Moved secrets into environment variables.
 
 19-06-2022
 * Added the option to delete individual entries.
