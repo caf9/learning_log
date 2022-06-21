@@ -5,7 +5,7 @@
 {% endblock page_header %}
 
 {% block content %}
-    <p><a href="{% url 'learning_logs:new_topic' %}">Add a new topic</a></p>
+    <p><a href="{% url 'learning_logs:new_topic' %}" class="btn btn-primary btn-sm" role="button">Add Topic</a></p>
     <ul>
         {% for topic in topics %}
             <li><h5>
